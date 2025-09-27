@@ -99,21 +99,22 @@ body {
 #landingPage {
     width: 100%;
     height: 100vh;
-    /* background: radial-gradient(circle at top left, #fff 0%, #fff 10%, #6A89FF 60%, #0024cb 100%); */
-    background: radial-gradient(
-  circle at top left,
-  #ffffff 0%,
-  #f0f4ff 10%,
-  #d6e4ff 25%,
-  #a9c1ff 45%,
-  #6A89FF 65%,
-  #3b5bdb 85%,
-  #0024cb 100%
-);
-
-/* background: linear-gradient(to bottom, #CADCFC 0%, #6A89FF 60%, #00246b 100%); */
-
-
+    /* background: radial-gradient(circle at top left,
+            #ffffff 0%,
+            #f0f4ff 10%,
+            #d6e4ff 25%,
+            #a9c1ff 45%,
+            #6A89FF 65%,
+            #3b5bdb 85%,
+            #0024cb 100%); */
+    background: radial-gradient(circle at bottom right,
+            #0024cb 0%,
+            #3b5bdb 10%,
+            #6A89FF 25%,
+            #a9c1ff 45%,
+            #d6e4ff 65%,
+            #f0f4ff 85%,
+            #ffffff 100%);
     position: relative;
     padding-top: 40px;
     /* Add padding to account for fixed nav */
@@ -153,14 +154,19 @@ body {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 20px;   /* gives spacing from the top */
-    left: 50%;   /* start from middle */
-    transform: translateX(-50%); /* center it */
+    top: 20px;
+    /* gives spacing from the top */
+    left: 50%;
+    /* start from middle */
+    transform: translateX(-50%);
+    /* center it */
     z-index: 1000;
 
     /* Capsule Shape */
-    width: 80vw;         /* 80% of screen width */
-    max-width: 1200px;   /* optional: keeps it from getting too wide on huge screens */
+    width: 80vw;
+    /* 80% of screen width */
+    max-width: 1200px;
+    /* optional: keeps it from getting too wide on huge screens */
     border-radius: 50px;
 
     /* Glass Effect */
@@ -228,7 +234,7 @@ body {
     top: 1;
     height: 2.5px;
     background-color: #00246b;
-}   
+}
 
 #baricon.independent-bar-icon::after {
     width: 100%;
@@ -336,7 +342,6 @@ body {
 
 #nav-socials {
     display: flex;
-    /* justify-content: space-around; */
     gap: 5px;
     padding-left: 1vw;
     align-items: flex-end;
@@ -506,8 +511,15 @@ body {
 }
 
 #infopage {
-    min-height: 90vh;
-    background-color: #00246B;
+    height: 100vh;
+    background: radial-gradient(circle at top right,
+            #0024cb 0%,
+            #3b5bdb 10%,
+            #6A89FF 25%,
+            #a9c1ff 45%,
+            #d6e4ff 65%,
+            #f0f4ff 85%,
+            #ffffff 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -529,7 +541,7 @@ body {
 .supporth1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(3rem, 3vw, 6rem);
-    color: #CADCFC;
+    color: #00246B;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.8;
@@ -544,7 +556,7 @@ body {
     bottom: 10px;
     width: 100%;
     height: 3px;
-    background-color: #FCA311;
+    background-color: #fc1119;
     border-radius: 2px;
 }
 
@@ -591,12 +603,12 @@ body {
 
 .supporter-slider::before {
     left: 0;
-    background: linear-gradient(to right, #00246B 70%, transparent);
+    background: linear-gradient(to right, #ffffff 70%, transparent);
 }
 
 .supporter-slider::after {
     right: 0;
-    background: linear-gradient(to left, #00246B 70%, transparent);
+    background: linear-gradient(to left, transparent);
 }
 
 /* Infinite scroll */
@@ -638,12 +650,12 @@ body {
 }
 
 #description h2 {
-    color: #CADCFC;
+    color: #00246B;
     font-size: 1.5vw;
     line-height: 1.1;
     text-transform: capitalize;
     font-family: 'Bebas Neue';
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 .sacramentoinfo {
@@ -651,7 +663,7 @@ body {
     text-transform: capitalize;
     font-family: 'Sacramento', cursive;
     font-size: 3vw;
-    color: #FCA311;
+    color: #fc1119;
     font-weight: 400;
 }
 
@@ -821,7 +833,8 @@ body {
 
 #ourWorks {
     padding-top: clamp(1vw, 1vw, 1vw);
-    padding-left: clamp(2.5vw, 4vw, 4vw);
+    padding-left: clamp(5vw, 20vw, 20vw);
+    padding-right: clamp(5vw, 20vw, 20vw);
     width: 100%;
     height: fit-content;
     padding-bottom: clamp(4vw, 8vw, 10vw);
@@ -831,8 +844,8 @@ body {
 .ourWorks-heading {
     color: #00246B;
     font-family: 'Bebas Neue';
-    font-size: clamp(2rem, 5vw, 5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3vw, 3rem);
+    margin-bottom: .5rem;
     padding-left: 2vw;
     text-align: center;
     font-weight: 400;
@@ -842,19 +855,17 @@ body {
 #elem {
     position: relative;
     border-top: 1px solid #00246B;
-    width: 25%;
-    height: calc(clamp(2rem, 4vw, 4rem) * 2.5);
-    /* Height based on h1 font size */
+    width: 100%;
+    height: calc(clamp(2rem, 2vw, 4rem) * 2.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: clamp(1.5rem, 4vw, 4rem) 1.5vw;
-    /* Added vertical padding */
+    padding: clamp(.5rem, 1.5vw, 1.5rem) 1.5vw;
 }
 
 #elem h1 {
     opacity: .8;
-    font-size: clamp(1.5rem, 4vw, 4rem);
+    font-size: clamp(.5rem, 1.5vw, 1.5rem);
     color: #00246B;
     text-transform: uppercase;
     line-height: 1;
