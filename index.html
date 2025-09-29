@@ -18,36 +18,55 @@
 </head>
 
 <body>
-    <div class="blur-backdrop"></div>
-    <div class="menu-overlay">
-        <nav class="mobile-menu" aria-label="Mobile navigation menu">
-            <div class="menu-item"><a href="#landingPage">Home</a></div>
-            <div class="menu-item"><a href="#infopage">About</a></div>
-            <div class="menu-item"><a href="#ourworks">Projects</a></div>
-            <div class="menu-item"><a href="#team">Team</a></div>
-            <div class="menu-item"><a href="#footer">Contact</a></div>
-        </nav>
-        <div id="nav-bottom">
-            <div id="nav-socials">
-                <a href="#">Twitter <i class="ri-arrow-right-up-line"></i></a>
-                <a href="#">LinkedIn <i class="ri-arrow-right-up-line"></i></a>
-                <a href="#">Instagram <i class="ri-arrow-right-up-line"></i></a>
-            </div>
-            <div id="nav-video">
-                <video autoplay muted loop src="./assets/vid1.mp4" controls></video>
-            </div>
-        </div>
-    </div>
     <div id="main">
         <div id="minicircle"></div>
-        <!-- Independent bar icon fixed on screen -->
-        <div id="baricon" class="independent-bar-icon"></div>
 
         <nav id="nav" aria-label="Main navigation">
-            <div class="bounding">
-                <a href="#" class="bounding-elem">Navgyan Innovations</a>
+            <div class="nav-content">
+                <!-- Company Logo on left -->
+                <div class="nav-left">
+                    <div class="bounding">
+                        <img src="./assets/NAVGYAN FAVICON.png" alt="Navgyan Innovations Logo"
+                            class="company-logo bounding-elem">
+                    </div>
+                </div>
+
+                <!-- Navigation links in center (hidden on mobile) -->
+                <div class="nav-center">
+                    <div class="bounding">
+                        <a href="#landingPage" class="nav-link">Home</a>
+                        <a href="#infopage" class="nav-link">About</a>
+                        <a href="#ourworks" class="nav-link">Projects</a>
+                        <a href="#team" class="nav-link">Team</a>
+                        <a href="#footer" class="nav-link">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Company Name on right -->
+                <div class="nav-right">
+                    <div class="bounding">
+                        <a href="#" class="bounding-elem company-title">Navgyan Innovations</a>
+                    </div>
+                    <!-- Hamburger for mobile -->
+                    <div class="nav-hamburger" id="navHamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </div>
         </nav>
+
+        <!-- Mobile menu overlay -->
+        <div id="mobileMenu">
+            <div id="closeBtn">✕</div>
+            <a href="#landingPage">Home</a>
+            <a href="#infopage">About</a>
+            <a href="#ourworks">Projects</a>
+            <a href="#team">Team</a>
+            <a href="#footer">Contact</a>
+        </div>
+
         <div id="landingPage">
             <div id="particles-js"></div>
             <div id="landingMain">
@@ -65,9 +84,13 @@
                 </div>
             </div>
             <div id="landingfooter">
-                <div class="lfooter2" id="slashtxt">
+                <div class="footercontnent">
                     <div class="bounding">
                         <a href="#ourworks" class="bounding-elem">See Our Products <i
+                                class="ri-arrow-right-up-line"></i></a>
+                    </div>
+                    <div class="bounding">
+                        <a href="#https://example.com/event" class="bounding-elem">Upcoming Events <i
                                 class="ri-arrow-right-up-line"></i></a>
                     </div>
                 </div>
@@ -128,10 +151,10 @@
             </div>
 
             <div id="description">
-                <h2 class="splittext">Navgyan Innovations Pvt. Ltd. acts as the parent body and innovation studio behind a suite</h2>
-                <h2 class="splittext"> of futuristic <span class="sacramentoinfo">startup</span>
-                    projects. Each initiative is built to address critical </h2>
-                <h2 class="splittext">needs in healthcare, environment, agriculture, and digital transformation.</h2>
+                <p class="description-text">Navgyan Innovations Pvt. Ltd. acts as the parent body and innovation studio
+                    behind a suite of futuristic <span class="sacramentoinfo">startup</span> projects. Each initiative
+                    is built to address critical needs in healthcare, environment, agriculture, and digital
+                    transformation.</p>
             </div>
 
         </div>
@@ -187,29 +210,49 @@
 
         <div id="ourWorks">
             <h1 class="ourWorks-heading">Our Works</h1>
-            <div id="elem">
-                <h1>Breath X</h1>
-                <h4>2024</h4>
-            </div>
-            <div id="elem">
-                <h1>Brain viz</h1>
-                <h4>2024</h4>
-            </div>
-            <div id="elem">
-                <h1>NEUROLANG</h1>
-                <h4>2024</h4>
-            </div>
-            <div id="elem">
-                <h1>AQUATRON</h1>
-                <h4>2025</h4>
-            </div>
-            <div id="elem">
-                <h1>UNICOLLAB</h1>
-                <h4>2025</h4>
-            </div>
-            <div id="elem" class="elemlast">
-                <h1>MANIMA</h1>
-                <h4>2025</h4>
+            <div class="works-grid">
+                <div class="work-card" onclick="showProjectModal('Breath X', 'MedTech', '2024')">
+                    <div class="work-card-content">
+                        <h2>Breath X</h2>
+                        <div class="work-year">2024</div>
+                        <div class="work-category">MedTech</div>
+                    </div>
+                </div>
+                <div class="work-card" onclick="showProjectModal('Brain Viz', 'MedTech', '2024')">
+                    <div class="work-card-content">
+                        <h2>Brain Viz</h2>
+                        <div class="work-year">2024</div>
+                        <div class="work-category">MedTech</div>
+                    </div>
+                </div>
+                <div class="work-card" onclick="showProjectModal('NEUROLANG', 'AI/ML', '2024')">
+                    <div class="work-card-content">
+                        <h2>NEUROLANG</h2>
+                        <div class="work-year">2024</div>
+                        <div class="work-category">AI/ML</div>
+                    </div>
+                </div>
+                <div class="work-card" onclick="showProjectModal('AQUATRON', 'AquaTech', '2025')">
+                    <div class="work-card-content">
+                        <h2>AQUATRON</h2>
+                        <div class="work-year">2025</div>
+                        <div class="work-category">AquaTech</div>
+                    </div>
+                </div>
+                <div class="work-card" onclick="showProjectModal('UNICOLLAB', 'Digital', '2025')">
+                    <div class="work-card-content">
+                        <h2>UNICOLLAB</h2>
+                        <div class="work-year">2025</div>
+                        <div class="work-category">Digital</div>
+                    </div>
+                </div>
+                <div class="work-card" onclick="showProjectModal('MANIMA', 'AI/ML', '2025')">
+                    <div class="work-card-content">
+                        <h2>MANIMA</h2>
+                        <div class="work-year">2025</div>
+                        <div class="work-category">AI/ML</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -310,9 +353,8 @@
                 </div>
                 <h3 class="socials-heading">Socials</h3>
                 <div class="social-links">
-                    <a href="#"><i class="ri-twitter-x-fill"></i></a>
-                    <a href="#"><i class="ri-linkedin-fill"></i></a>
-                    <a href="#"><i class="ri-instagram-fill"></i></a>
+                    <a href="https://www.linkedin.com/company/navgyaninnovations-pvt-ltd/"><i class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.instagram.com/navgyanpvt?igsh=MWtlN3NrZHp1aHg0eA=="><i class="ri-instagram-fill"></i></a>
                 </div>
             </div>
         </div>
@@ -356,6 +398,14 @@
                 </div>
             </div>
         </div>
+        <div id="mobileMenu">
+            <a href="#landingPage">Home</a>
+            <a href="#infopage">About</a>
+            <a href="#ourworks">Projects</a>
+            <a href="#team">Team</a>
+            <a href="#footer">Contact</a>
+        </div>
+
 
         <!-- GSAP CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
@@ -406,6 +456,134 @@
                     card.addEventListener('blur', () => card.classList.remove('is-hover'));
                 });
             })();
+
+            // Project Modal Function for Grid Cards
+            function showProjectModal(title, category, year) {
+                const projectOverlay = document.getElementById('project-overlay');
+                const overlayContent = projectOverlay.querySelector('.project-overlay-content');
+
+                // Project data
+                const projects = {
+                    'Breath X': {
+                        title: "Breath X",
+                        supportedBy: "Navgyan Innovations",
+                        domain: "Healthcare IoT",
+                        year: 2024,
+                        duration: "6 Months",
+                        technologies: ["Python", "Flask", "Sensors", "IoT"],
+                        description: "Advanced respiratory monitoring solution using AI-powered analytics for early detection of respiratory conditions and comprehensive health tracking.",
+                        teamMembers: ["Dr. Tusharkant Panda", "Padmini Mishra", "Bhawani Sahu"]
+                    },
+                    'Brain Viz': {
+                        title: "Brain Viz",
+                        supportedBy: "Navgyan Innovations, BIRAC",
+                        domain: "AI & Data Visualization",
+                        year: 2024,
+                        duration: "8 Months",
+                        technologies: ["Python", "TensorFlow", "D3.js", "Computer Vision"],
+                        description: "Revolutionary brain imaging visualization platform for enhanced diagnostic capabilities and treatment planning using advanced AI algorithms.",
+                        teamMembers: ["Dr. Tusharkant Panda", "Ramkrushna Sahu", "Priyanshu Patro"]
+                    },
+                    'NEUROLANG': {
+                        title: "NEUROLANG",
+                        supportedBy: "Navgyan Innovations",
+                        domain: "Natural Language Processing",
+                        year: 2024,
+                        duration: "6 Months",
+                        technologies: ["Python", "Keras", "NLP Libraries", "Deep Learning"],
+                        description: "Natural language processing system designed for neurological assessment and communication assistance for patients with speech disorders.",
+                        teamMembers: ["Dr. Tusharkant Panda", "Anurag Das", "Priyanshu Patro"]
+                    },
+                    'AQUATRON': {
+                        title: "AQUATRON",
+                        supportedBy: "Navgyan Innovations",
+                        domain: "Environmental Monitoring",
+                        year: 2025,
+                        duration: "10 Months",
+                        technologies: ["IoT", "Cloud", "JavaScript", "Data Analytics"],
+                        description: "Smart aquaculture monitoring system for sustainable fish farming and water quality management using IoT sensors and real-time analytics.",
+                        teamMembers: ["Dr. Tusharkant Panda", "Kumar Prasannajit Sahu", "Bhawani Sahu"]
+                    },
+                    'UNICOLLAB': {
+                        title: "UNICOLLAB",
+                        supportedBy: "Navgyan Innovations",
+                        domain: "Web Development",
+                        year: 2025,
+                        duration: "6 Months",
+                        technologies: ["HTML", "CSS", "JavaScript", "Cloud Computing"],
+                        description: "Collaborative platform for university-industry partnerships and research project management with integrated communication tools.",
+                        teamMembers: ["Dr. Tusharkant Panda", "Kumar Prasannajit Sahu", "Anurag Das"]
+                    },
+                    'MANIMA': {
+                        title: "MANIMA",
+                        supportedBy: "Navgyan Innovations",
+                        domain: "Mobile Application",
+                        year: 2025,
+                        duration: "8 Months",
+                        technologies: ["React Native", "Firebase", "Node.js", "Machine Learning"],
+                        description: "Intelligent manufacturing assistant powered by machine learning for process optimization and quality control in industrial settings.",
+                        teamMembers: ["Dr. Tusharkant Panda", "Padmini Mishra", "Ramkrushna Sahu"]
+                    }
+                };
+
+                // Find the project data based on title
+                const project = projects[title];
+
+                if (!project) {
+                    console.warn('Project not found:', title);
+                    return;
+                }
+
+                // Update the modal content
+                overlayContent.innerHTML = `
+                    <button class="project-overlay-close" aria-label="Close overlay">&times;</button>
+                    <div id="project-overlay-top">
+                        <h1>${project.title}</h1>
+                        <video autoplay muted loop src="./assets/vid1.mp4"></video>
+                    </div>
+                    <div id="project-overlay-middle">
+                        <div class="project-middle-left">
+                            <h1>Supported By : <span>${project.supportedBy}</span></h1>
+                        </div>
+                        <div class="project-middle-right">
+                            <h1>Domain : <span>${project.domain}</span></h1>
+                            <h1>Year : <span>${project.year}</span></h1>
+                            <h1>Duration : <span>${project.duration}</span></h1>
+                            <h1>Technologies : <span>${project.technologies.join(', ')}</span></h1>
+                        </div>
+                    </div>
+                    <div id="project-overlay-bottom">
+                        <div class="projectDesc">
+                            <h2>Description</h2>
+                            <p>${project.description}</p>
+                        </div>
+                        <div class="projectTeam">
+                            <h2>Team Members</h2>
+                            <ul>
+                                ${project.teamMembers.map(member => `<li>${member}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+
+                // Show the modal
+                projectOverlay.classList.remove('hidden');
+
+                // Re-attach close event to new button
+                const closeBtn = overlayContent.querySelector('.project-overlay-close');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        projectOverlay.classList.add('hidden');
+                    });
+                }
+
+                // Close modal when clicking outside
+                projectOverlay.addEventListener('click', (e) => {
+                    if (e.target === projectOverlay) {
+                        projectOverlay.classList.add('hidden');
+                    }
+                });
+            }
         </script>
 </body>
 

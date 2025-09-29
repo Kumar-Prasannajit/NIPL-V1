@@ -14,132 +14,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // -----------------------
     // Query selectors
     // -----------------------
-    const barIcon = document.querySelector('#baricon');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    const blurBackdrop = document.querySelector('.blur-backdrop');
     const nav = document.querySelector('#nav');
     const navLinks = document.querySelectorAll('#nav a');            // NodeList
-    const menuText = document.querySelectorAll('.menuDiv h4');      // NodeList
     const landingPage = document.querySelector('#landingPage');
 
-    // -----------------------
-    // Helper: isMenuOpen
-    // -----------------------
-    const isMenuOpen = () => {
-        return (barIcon && barIcon.classList.contains('active')) ||
-               (menuOverlay && menuOverlay.classList.contains('active')) ||
-               document.body.classList.contains('menu-open');
-    };
 
-    // -----------------------
-    // New Independent Menu System
-    // -----------------------
-    const mobileMenuLinks = document.querySelectorAll('.menu-item a');
-    let isMenuAnimating = false;
 
-    // Independent Bar Icon Toggle - handles both open and close
-    if (barIcon && menuOverlay) {
-        barIcon.addEventListener('click', () => {
-            if (isMenuAnimating) return;
-            
-            const isMenuOpen = barIcon.classList.contains('active');
-            
-            if (!isMenuOpen) {
-                openMenu();
-            } else {
-                closeMenu();
-            }
+    const hamburger = document.getElementById('navHamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const closeBtn = document.getElementById('closeBtn');
+
+hamburger.addEventListener('click', () => {
+    // No animation toggle, just show the menu
+    mobileMenu.classList.toggle('show');
+
+    const links = mobileMenu.querySelectorAll('a');
+    if (mobileMenu.classList.contains('show')) {
+        links.forEach((link, i) => {
+            link.style.animation = `slideUp 0.5s forwards ${i * 0.1}s`;
         });
+    } else {
+        links.forEach(link => link.style.animation = '');
     }
+});
 
-    // Open Menu Function
-    function openMenu() {
-        if (isMenuAnimating) return;
-        isMenuAnimating = true;
+// Close button functionality
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('show');
+    mobileMenu.querySelectorAll('a').forEach(link => link.style.animation = '');
+});
 
-        // 1. Activate states
-        barIcon.classList.add('active');
-        document.body.classList.add('menu-open');
-
-        // 2. Hide navbar behind blur (lower z-index)
-        if (nav) {
-            gsap.to(nav, {
-                y: -nav.offsetHeight,
-                duration: 0.3,
-                ease: "power2.inOut"
-            });
-        }
-
-        // 3. Show blur backdrop first
-        if (blurBackdrop) {
-            blurBackdrop.classList.add('active');
-        }
-
-        // 4. After blur appears, show menu overlay
-        setTimeout(() => {
-            menuOverlay.classList.add('active');
-            
-            // 5. Animate menu items from bottom to top with proper timing
-            gsap.set(mobileMenuLinks, {
-                opacity: 0,
-                y: 50
-            });
-            
-            gsap.to(mobileMenuLinks, {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: "power2.out",
-                delay: 0.2,
-                onComplete: () => {
-                    isMenuAnimating = false;
-                }
-            });
-        }, 200);
-    }
-
-    // Close Menu Function
-    function closeMenu() {
-        if (isMenuAnimating) return;
-        isMenuAnimating = true;
-
-        // 1. Animate menu items out
-        gsap.to(mobileMenuLinks, {
-            opacity: 0,
-            y: 30,
-            duration: 0.3,
-            stagger: 0.05,
-            ease: "power2.in"
-        });
-
-        // 2. Hide menu overlay
-        setTimeout(() => {
-            menuOverlay.classList.remove('active');
-            
-            // 3. Hide blur backdrop
-            if (blurBackdrop) {
-                blurBackdrop.classList.remove('active');
-            }
-
-            // 4. Show navbar again
-            if (nav) {
-                gsap.to(nav, {
-                    y: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            }
-
-            // 5. Remove active states
-            barIcon.classList.remove('active');
-            document.body.classList.remove('menu-open');
-            
-            setTimeout(() => {
-                isMenuAnimating = false;
-            }, 300);
-        }, 300);
-    }
+// Close menu when a link is clicked
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+        mobileMenu.querySelectorAll('a').forEach(link => link.style.animation = '');
+    });
+});
 
     // -----------------------
     // Responsive heading update
@@ -220,11 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const hideNavbar = () => {
-            if (isMenuOpen()) {
-                // if menu is open, keep navbar visible
-                showNavbar();
-                return; 
-            }
             if (window.scrollY > landingHeight) {
                 gsap.to(nav, { y: -(navbarHeight), duration: 0.3, ease: "power.inOut" });
             }
@@ -232,18 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initial behavior (preserve previous "hide after 1s")
         scrollTimeout = setTimeout(() => {
-            if (!isMenuOpen()) hideNavbar();
+            hideNavbar();
         }, 1000);
 
         window.addEventListener('scroll', () => {
             clearTimeout(scrollTimeout);
-
-            // If side menu is active, always keep navbar visible
-            if (isMenuOpen()) {
-                showNavbar();
-                lastScrollTop = window.pageYOffset || 0;
-                return;
-            }
 
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -259,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     showNavbar();
                 }
 
-                // hide again after 1s of inactivity (only if menu not open)
+                // hide again after 1s of inactivity
                 scrollTimeout = setTimeout(() => {
-                    if (!isMenuOpen()) hideNavbar();
+                    hideNavbar();
                 }, 1000);
             }
 
@@ -339,18 +238,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
         try {
             gsap.registerPlugin(ScrollTrigger);
-            const splitEls = document.querySelectorAll(".splittext");
-            if (splitEls.length) {
-                gsap.from(splitEls, {
-                    y: 100,
-                    opacity: 0,
-                    stagger: 0.1,
-                    duration: 1.1,
-                    ease: "power4.out",
+            // New animation for description text
+            const descriptionText = document.querySelector(".description-text");
+            if (descriptionText) {
+                gsap.to(descriptionText, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: "power3.out",
                     scrollTrigger: {
-                        trigger: "#infopage",
-                        start: "top center",
-                        end: "bottom center",
+                        trigger: "#description",
+                        start: "top 80%",
+                        end: "bottom 70%",
                         toggleActions: "play none none reverse"
                     }
                 });
@@ -625,26 +524,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // -----------------------
-    // Auto-close menu overlay when a menu link is clicked
-    // -----------------------
-    document.querySelectorAll('.menu-overlay nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            // only act if the overlay is currently open
-            if (menuOverlay && menuOverlay.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-    });
-
-    // Click outside menu to close (blur backdrop click)
-    if (blurBackdrop) {
-        blurBackdrop.addEventListener('click', () => {
-            if (menuOverlay && menuOverlay.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-    }
     
     
 }); // end DOMContentLoaded
