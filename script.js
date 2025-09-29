@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -----------------------
     // Query selectors
     // -----------------------
-    const nav = document.querySelector('#nav');
-    const navLinks = document.querySelectorAll('#nav a');            // NodeList
+    const nav = document.querySelector('#nav');           // NodeList
     const landingPage = document.querySelector('#landingPage');
 
 
