@@ -466,63 +466,51 @@
                 const projects = {
                     'Breath X': {
                         title: "Breath X",
-                        supportedBy: "Navgyan Innovations",
+                        supportedBy: "BIRAC, Dept. of Biotechnology, Navgyan Innovations",
                         domain: "Healthcare IoT",
                         year: 2024,
-                        duration: "6 Months",
                         technologies: ["Python", "Flask", "Sensors", "IoT"],
                         description: "Advanced respiratory monitoring solution using AI-powered analytics for early detection of respiratory conditions and comprehensive health tracking.",
-                        teamMembers: ["Dr. Tusharkant Panda", "Padmini Mishra", "Bhawani Sahu"]
                     },
                     'Brain Viz': {
                         title: "Brain Viz",
                         supportedBy: "Navgyan Innovations, BIRAC",
                         domain: "AI & Data Visualization",
                         year: 2024,
-                        duration: "8 Months",
                         technologies: ["Python", "TensorFlow", "D3.js", "Computer Vision"],
                         description: "Revolutionary brain imaging visualization platform for enhanced diagnostic capabilities and treatment planning using advanced AI algorithms.",
-                        teamMembers: ["Dr. Tusharkant Panda", "Ramkrushna Sahu", "Priyanshu Patro"]
                     },
                     'NEUROLANG': {
                         title: "NEUROLANG",
                         supportedBy: "Navgyan Innovations",
                         domain: "Natural Language Processing",
                         year: 2024,
-                        duration: "6 Months",
                         technologies: ["Python", "Keras", "NLP Libraries", "Deep Learning"],
                         description: "Natural language processing system designed for neurological assessment and communication assistance for patients with speech disorders.",
-                        teamMembers: ["Dr. Tusharkant Panda", "Anurag Das", "Priyanshu Patro"]
                     },
                     'AQUATRON': {
                         title: "AQUATRON",
                         supportedBy: "Navgyan Innovations",
                         domain: "Environmental Monitoring",
                         year: 2025,
-                        duration: "10 Months",
                         technologies: ["IoT", "Cloud", "JavaScript", "Data Analytics"],
                         description: "Smart aquaculture monitoring system for sustainable fish farming and water quality management using IoT sensors and real-time analytics.",
-                        teamMembers: ["Dr. Tusharkant Panda", "Kumar Prasannajit Sahu", "Bhawani Sahu"]
                     },
                     'UNICOLLAB': {
                         title: "UNICOLLAB",
                         supportedBy: "Navgyan Innovations",
                         domain: "Web Development",
                         year: 2025,
-                        duration: "6 Months",
                         technologies: ["HTML", "CSS", "JavaScript", "Cloud Computing"],
                         description: "Collaborative platform for university-industry partnerships and research project management with integrated communication tools.",
-                        teamMembers: ["Dr. Tusharkant Panda", "Kumar Prasannajit Sahu", "Anurag Das"]
                     },
                     'MANIMA': {
                         title: "MANIMA",
                         supportedBy: "Navgyan Innovations",
                         domain: "Mobile Application",
                         year: 2025,
-                        duration: "8 Months",
                         technologies: ["React Native", "Firebase", "Node.js", "Machine Learning"],
                         description: "Intelligent manufacturing assistant powered by machine learning for process optimization and quality control in industrial settings.",
-                        teamMembers: ["Dr. Tusharkant Panda", "Padmini Mishra", "Ramkrushna Sahu"]
                     }
                 };
 
@@ -548,7 +536,6 @@
                         <div class="project-middle-right">
                             <h1>Domain : <span>${project.domain}</span></h1>
                             <h1>Year : <span>${project.year}</span></h1>
-                            <h1>Duration : <span>${project.duration}</span></h1>
                             <h1>Technologies : <span>${project.technologies.join(', ')}</span></h1>
                         </div>
                     </div>
@@ -556,12 +543,6 @@
                         <div class="projectDesc">
                             <h2>Description</h2>
                             <p>${project.description}</p>
-                        </div>
-                        <div class="projectTeam">
-                            <h2>Team Members</h2>
-                            <ul>
-                                ${project.teamMembers.map(member => `<li>${member}</li>`).join('')}
-                            </ul>
                         </div>
                     </div>
                 `;

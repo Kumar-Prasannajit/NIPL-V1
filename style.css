@@ -212,7 +212,7 @@ body {
 
 /* Company title specific styling */
 .company-title {
-    color: #00246B !important;
+    color: #FCA311 !important;
     font-family: 'Bebas Neue', sans-serif !important;
     font-size: 1.5rem;
     font-weight: 400;
@@ -292,13 +292,14 @@ body {
     height: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-right: 2vw;
+    justify-content: flex-start;
+    padding-top: 3vw;
+    padding-left: 2vw;
 }
 
 .footercontnent{
     display: flex;
-    gap: 8vw;
+    gap: 2vw;
 }
 
 .bounding {
@@ -368,7 +369,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.8;
-    margin-bottom: 3rem;
+    margin-bottom: 8rem;
     position: relative;
 }
 
@@ -485,7 +486,7 @@ body {
     text-transform: capitalize;
     font-family: 'Sacramento', cursive;
     font-size: 3vw;
-    color: #FC1119;
+    color: #FCA311;
     font-weight: 500;
 }
 
@@ -559,7 +560,7 @@ body {
 
 .swiper-slide {
     flex-shrink: 0;
-    width: 25%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -577,7 +578,7 @@ body {
 
 .box h2 {
     font-size: 2.3vw;
-    color: #FC1119;
+    color: #FCA311;
     letter-spacing: 0.1vw;
     font-family: 'Bebas Neue', sans-serif;
 }
@@ -611,7 +612,7 @@ body {
 .data h2 span {
     text-transform: capitalize;
     font-family: 'Sacramento', cursive;
-    color: #FC1119;
+    color: #FCA311;
     font-size: 1.5vw;
 }
 
@@ -1530,15 +1531,6 @@ body {
     overflow-y: auto;
 }
 
-.projectTeam {
-    flex: 1 1 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* border-left: 2px solid #CADCFC; */
-    padding-left: 1.5vw;
-}
-
 .projectDesc p {
     color: #00246B;
     font-size: 1.08rem;
@@ -1546,28 +1538,6 @@ body {
     font-family: 'Syne', sans-serif;
     margin: 0;
     opacity: 0.92;
-}
-
-.projectTeam h2 {
-    color: #00246B;
-    font-size: 1.25vw;
-    font-family: 'Bebas Neue', sans-serif;
-    margin-bottom: 0.5vw;
-    letter-spacing: 1px;
-    font-weight: 500;
-}
-
-.projectTeam ul {
-    list-style: disc inside;
-    padding-left: 0;
-    margin: 0;
-}
-
-.projectTeam li {
-    color: #00246B;
-    font-size: 1vw;
-    font-family: 'Syne', sans-serif;
-    margin-bottom: 0.3vw;
 }
 
 .projectDesc {
@@ -2140,5 +2110,3 @@ body {
         font-size: 0.8rem;
     }
 }
-
-@media screen and (max-height: 600px) {}
