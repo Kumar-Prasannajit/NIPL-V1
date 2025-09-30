@@ -557,7 +557,8 @@ body {
 
 .swipe{
     font-size: 1vw;
-    color: #00246B;
+    color: #fc1119;
+    margin: 0 0.5vw;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;

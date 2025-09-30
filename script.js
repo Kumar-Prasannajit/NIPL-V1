@@ -221,7 +221,12 @@ mobileMenu.querySelectorAll('a').forEach(link => {
             const minicircle = document.querySelector('#minicircle');
             if (!minicircle) return;
             minicircle.classList.add('enlarged');
-            minicircle.innerHTML = '<h2 class="swipe">Swipe</h2><span><h2><i class="ri-contract-right-line"></i></h2></span>';
+            minicircle.innerHTML = `
+  <span><h2><i class="ri-contract-left-line"></i></h2></span>
+  <h2 class="swipe">Swipe</h2>
+  <span><h2><i class="ri-contract-right-line"></i></h2></span>
+`;
+
         });
         gridEl.addEventListener('mouseleave', () => {
             const minicircle = document.querySelector('#minicircle');
