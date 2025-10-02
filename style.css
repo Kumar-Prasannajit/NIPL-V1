@@ -99,14 +99,7 @@ body {
 #landingPage {
     width: 100%;
     height: 100vh;
-    background: radial-gradient(circle at bottom right,
-            #0024cb 0%,
-            #3b5bdb 10%,
-            #6A89FF 25%,
-            #a9c1ff 45%,
-            #d6e4ff 65%,
-            #f0f4ff 85%,
-            #ffffff 100%);
+    background: linear-gradient(180deg, #06243a 0%, #001832 100%);
     position: relative;
     padding-top: 40px;
     /* Add padding to account for fixed nav */
@@ -143,32 +136,27 @@ body {
     color: #fff;
     padding: 10px 35px;
     position: fixed;
-    top: 20px;
-    /* gives spacing from the top */
+    top: 20px; /* spacing from the top */
     left: 50%;
-    /* start from middle */
-    transform: translateX(-50%);
-    /* center it */
+    transform: translateX(-50%); /* center it */
     z-index: 1000;
 
     /* Capsule Shape */
-    width: 60vw;
-    /* 80% of screen width */
-    /* optional: keeps it from getting too wide on huge screens */
+    width: 60vw; /* responsive width */
     border-radius: 50px;
 
-    /* Glass Effect */
-    background: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    /* Dark Glass Effect */
+    background: rgba(0, 24, 50, 0.6); /* dark glass */
+    backdrop-filter: blur(10px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* faint border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
 
     /* Smooth transition */
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
 }
 
-/* Nav content wrapper for positioning context */
+/* Nav content wrapper */
 .nav-content {
     position: relative;
     width: 100%;
@@ -200,10 +188,10 @@ body {
 
 /* Navigation links */
 .nav-center .nav-link {
-    color: #00246B !important;
+    color: #cadcfc !important; /* soft blue for contrast */
     font-family: 'Syne', sans-serif !important;
     font-size: 1rem;
-    font-weight: 200;
+    font-weight: 300;
     text-transform: capitalize !important;
     letter-spacing: 1px;
     padding: 0.1rem 1rem;
@@ -211,20 +199,20 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Company title specific styling */
+.nav-center .nav-link:hover {
+    background: rgba(252, 162, 17, 0.15); /* soft amber glow */
+    transform: translateY(-2px);
+}
+
+/* Company title */
 .company-title {
-    color: #FCA311 !important;
+    color: #FCA311 !important; /* golden accent */
     font-family: 'Bebas Neue', sans-serif !important;
     font-size: 1.5rem;
     font-weight: 400;
     text-decoration: none;
     letter-spacing: 1px;
     white-space: nowrap;
-}
-
-.nav-link:hover {
-    background: rgba(252, 162, 17, 0.232);
-    transform: translateY(-2px);
 }
 
 /* Company logo */
@@ -240,25 +228,25 @@ body {
 }
 
 #nav:hover {
-    background: rgba(255, 255, 255, 0.45);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+    background: rgba(0, 24, 50, 0.75); /* slightly stronger on hover */
+    box-shadow: 0 6px 28px rgba(0, 36, 107, 0.5); /* deep glowing shadow */
 }
 
-
-
+/* Global nav links */
 #nav a {
     font-weight: 500;
-    color: #00246B;
+    color: #cadcfc; /* light blue for visibility */
     font-family: 'Bebas Neue';
     text-decoration: none;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
+
 #landingMain {
     height: 80vh;
     width: 80vw;
-    color: #00246B;
+    color: #CADCFC;
     padding-top: 9vw;
     padding-left: 33px;
     text-transform: uppercase;
@@ -286,7 +274,7 @@ body {
     letter-spacing: 0;
     font-size: 5.5rem;
     font-weight: 500;
-    color: #fc1119;
+    color: #FCA311;
 }
 
 #landingfooter {
@@ -295,12 +283,12 @@ body {
     height: 50px;
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
-    padding-left: 2vw;
+    justify-content: flex-end;
+    padding-right: 2vw;
 }
 
 .footercontnent {
-    position: absolute;
+    color: #CADCFC;
     display: flex;
     gap: 2vw;
 }
@@ -339,14 +327,8 @@ body {
 
 #infopage {
     height: 100vh;
-    background: radial-gradient(circle at top right,
-            #0024cb 0%,
-            #3b5bdb 10%,
-            #6A89FF 25%,
-            #a9c1ff 45%,
-            #d6e4ff 65%,
-            #f0f4ff 85%,
-            #ffffff 100%);
+    background: linear-gradient(180deg, #001832 100%, #00246b 0%);
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -368,7 +350,7 @@ body {
 .supporth1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(3rem, 3vw, 6rem);
-    color: #00246B;
+    color: #f99e0c;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.8;
@@ -382,8 +364,8 @@ body {
     left: 0;
     bottom: 10px;
     width: 100%;
-    height: 3px;
-    background-color: #fc1119;
+    height: 2px;
+    /* background-color: #CADCFC; */
     border-radius: 2px;
 }
 
@@ -462,7 +444,7 @@ body {
 }
 
 .description-text {
-    color: #00246B;
+    color: #CADCFC;
     font-size: 1.25vw;
     line-height: 1.4;
     text-transform: capitalize;
@@ -502,14 +484,7 @@ body {
 #domains {
     min-height: 100vh;
     width: 100%;
-    background: radial-gradient(circle at bottom left,
-            #0024cb 0%,
-            #3b5bdb 10%,
-            #6A89FF 25%,
-            #a9c1ff 45%,
-            #d6e4ff 65%,
-            #f0f4ff 85%,
-            #ffffff 100%);
+    background: linear-gradient(180deg, #001933 0%, #001832 100%);
     overflow: hidden;
 }
 
@@ -536,14 +511,14 @@ body {
 .scroll-item h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 8vw;
-    color: #00246B;
+    color: #CADCFC;
     font-weight: 600;
 }
 
 .fullstop {
     height: 2vw;
     width: 2vw;
-    background-color: #FC1119;
+    background-color: #f99e0c;
     border-radius: 50%;
 }
 
@@ -559,7 +534,7 @@ body {
 
 .swipe{
     font-size: 1vw;
-    color: #fc1119;
+    color: #f99e0c;
     margin: 0 0.5vw;    
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -577,7 +552,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    color: #00246B;
+    color: #CADCFC;
     padding: 1vw;
     gap: 2vw;
 }
@@ -585,7 +560,7 @@ body {
 .box {
     height: 14vw;
     margin: 5vw 0;
-    border-left: 1px solid #c7101066;
+    border-left: 1px solid #FCA311;
 }
 
 .box h2 {
@@ -616,7 +591,7 @@ body {
 }
 
 .data h2 {
-    color: #00246B;
+    color: #CADCFC;
     text-align: right;
     font-size: 1vw;
 }
@@ -624,7 +599,7 @@ body {
 .data h2 span {
     text-transform: capitalize;
     font-family: 'Sacramento', cursive;
-    color: #FC1119;
+    color: #f99e0c;
     font-size: 1.5vw;
 }
 
@@ -680,14 +655,7 @@ body {
     width: 100%;
     height: fit-content;
     padding-bottom: clamp(6vw, 10vw, 12vw);
-    background: radial-gradient(circle at top left,
-            #0024cb 0%,
-            #3b5bdb 10%,
-            #6A89FF 25%,
-            #a9c1ff 45%,
-            #d6e4ff 65%,
-            #f0f4ff 85%,
-            #ffffff 100%);
+    background: linear-gradient(180deg, #001832 0%, #00246b 100%);
     position: relative;
 }
 
@@ -716,15 +684,12 @@ body {
 /* Work Card Styling */
 .work-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.15);
-    /* semi-transparent white */
+    background: rgba(0, 24, 50, 0.55); /* dark glassy navy */
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    /* softer shadow */
-    backdrop-filter: blur(12px) saturate(180%);
-    /* frosted effect */
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6); /* deeper shadow for contrast */
+    backdrop-filter: blur(10px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(160%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     display: flex;
@@ -733,15 +698,13 @@ body {
     align-items: center;
     text-align: center;
     padding: 2rem;
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
-    /* subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* subtle faint border */
 }
-
 
 .work-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 48px rgba(0, 36, 107, 0.15);
-    border-color: #FC1119;
+    box-shadow: 0 20px 48px rgba(0, 36, 107, 0.4); /* glowing blue hover */
+    border-color: #FC1119; /* red accent */
 }
 
 .work-card-content {
@@ -755,7 +718,7 @@ body {
 }
 
 .work-card h2 {
-    color: #00246B;
+    color: #ffffff; /* white for readability */
     font-family: sans-serif;
     font-size: 1.9rem;
     font-weight: 600;
@@ -765,7 +728,7 @@ body {
 }
 
 .work-year {
-    color: #FC1119;
+    color: #f99e0c; /* red accent */
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -774,15 +737,15 @@ body {
 }
 
 .work-category {
-    color: #00246B;
+    color: #cadcfc; /* soft light blue */
     font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    background: rgba(106, 137, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08); /* dark glassy pill */
     padding: 6px 16px;
     border-radius: 20px;
-    border: 1px solid rgba(106, 137, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Responsive Design */
@@ -829,6 +792,8 @@ body {
         font-size: 0.8rem;
         padding: 4px 12px;
     }
+}
+
 
     /* Mobile Screen */
     @media (max-width: 768px) {
