@@ -748,6 +748,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .works-grid {
@@ -1260,8 +1261,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 250px;
-    text-align: center;
+    max-width: 400px;
+    text-align: justify;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
