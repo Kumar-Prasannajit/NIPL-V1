@@ -59,12 +59,29 @@
 
         <!-- Mobile menu overlay -->
         <div id="mobileMenu">
-            <div id="closeBtn">✕</div>
-            <a href="#landingPage">Home</a>
-            <a href="#infopage">About</a>
-            <a href="#ourWorks">Projects</a>
-            <a href="#team-section">Team</a>
-            <a href="#footer">Contact</a>
+            <div id="menuTop">
+                <div id="closeBtn">✕</div>
+                <a href="#landingPage">Home</a>
+                <a href="#infopage">About</a>
+                <a href="#ourWorks">Projects</a>
+                <a href="#team-section">Team</a>
+                <a href="#footer">Contact</a>
+            </div>
+            <div id="menuBottom">
+                <div id="socialsMenu">
+                <a href="https://www.linkedin.com/company/navgyaninnovations-pvt-ltd/">LinkedIn <i class="ri-arrow-right-up-line"></i></a>
+                <a href="https://www.instagram.com/navgyanpvt?igsh=MWtlN3NrZHp1aHg0eA==">Instagram <i class="ri-arrow-right-up-line"></i></a>
+                </div>
+                <div id="eventsMenu">
+                    <div class="insta-card">
+                        <a href="https://www.instagram.com/p/DPYGD7IEZtL/" target="_blank">
+                            <img src="./assets/in1.png" alt="Instagram Post">
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
         <div id="landingPage">
@@ -265,14 +282,23 @@
                     <img src="./img/2.jpg" alt="Tom Simpson">
                     <h3>Mrs. Padmini Mishra</h3>
                     <h4>Director</h4>
-                    <p>Ph.D. in Advance Optical Modulation Techniques, is an accomplished academic and researcher with 5+ patents and 10+ publications. With over 16 years of experience in teaching and research, she has successfully mentored a government-funded team under DBT-BIRAC as well as several undergraduate student groups. Her expertise and dedication to innovation make her a driving force in advancing research and nurturing young talent within the organization.</p>
+                    <p>Ph.D. in Advance Optical Modulation Techniques, is an accomplished academic and researcher with
+                        5+ patents and 10+ publications. With over 16 years of experience in teaching and research, she
+                        has successfully mentored a government-funded team under DBT-BIRAC as well as several
+                        undergraduate student groups. Her expertise and dedication to innovation make her a driving
+                        force in advancing research and nurturing young talent within the organization.</p>
                 </div>
 
                 <div class="team-member">
                     <img src="./img/1.png" alt="John Doe">
                     <h3>Dr. Tusharkant Panda</h3>
                     <h4>Managing Director</h4>
-                    <p>Ph.D. in Optical Communication, is a distinguished researcher with several patents and publications in reputed journals. With over 17 years of experience in research and teaching, he currently leads two Department of Biotechnology–funded projects. His expertise spans Optical Fiber Communication, AI, Deep Learning, NLP and Nano Devices. Dr. Panda has guided 10+ postgraduate and 100+ undergraduate scholars, driving innovation through visionary leadership and cutting-edge research.</p>
+                    <p>Ph.D. in Optical Communication, is a distinguished researcher with several patents and
+                        publications in reputed journals. With over 17 years of experience in research and teaching, he
+                        currently leads two Department of Biotechnology–funded projects. His expertise spans Optical
+                        Fiber Communication, AI, Deep Learning, NLP and Nano Devices. Dr. Panda has guided 10+
+                        postgraduate and 100+ undergraduate scholars, driving innovation through visionary leadership
+                        and cutting-edge research.</p>
                 </div>
             </div>
         </section>
@@ -290,13 +316,14 @@
             </div>
             <div id="footeright">
                 <h2><span class="sacramentoinfo">Share</span> &nbsp; Your Vision</h2>
-                <div id="email">
-                    <input type="email" name="email" id="mail" placeholder="example@gmail.com">
-                    <div id="btn">
-                        <input type="button" value="">
+                <form name="newsletter" method="POST" data-netlify="true" id="email-form">
+                    <input type="hidden" name="form-name" value="newsletter">
+                    <input type="email" name="email" id="mail" placeholder="example@gmail.com" required>
+                    <button type="submit" id="btn">
                         <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
+                    </button>
+                </form>
+
                 <h3 class="socials-heading">Socials</h3>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/company/navgyaninnovations-pvt-ltd/"><i
@@ -355,7 +382,7 @@
         </div>
 
 
-    
+
 
         <!-- GSAP CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
@@ -460,7 +487,7 @@
                         domain: "Mobile Application",
                         year: 2025,
                         technologies: ["React Native", "Firebase", "Node.js", "Machine Learning"],
-                        description: "Intelligent manufacturing assistant powered by machine learning for process optimization and quality control in industrial settings.",
+                        description: "A digital platform for performing Pinddaan rituals online, offering seamless booking of priests, customizable ritual packages, and guided spiritual services. Designed to simplify traditional ceremonies with modern convenience and cultural sensitivity.",
                     }
                 };
 
