@@ -29,23 +29,17 @@
                         <img src="./assets/NAVGYAN FAVICON.png" alt="Navgyan Innovations Logo"
                             class="company-logo bounding-elem">
                     </div>
-                </div>
-
-                <!-- Navigation links in center (hidden on mobile) -->
-                <div class="nav-center">
                     <div class="bounding">
+                        <a href="#" class="bounding-elem company-title">Navgyan Innovations</a>
+                    </div>
+                </div>
+                <div class="nav-right">
+                     <div class="bounding">
                         <a href="#landingPage" class="nav-link">Home</a>
                         <a href="#infopage" class="nav-link">About</a>
                         <a href="#ourWorks" class="nav-link">Projects</a>
-                        <a href="#team-section" class="nav-link">Team</a>
+                        <a href="#team" class="nav-link">Team</a>
                         <a href="#footer" class="nav-link">Contact</a>
-                    </div>
-                </div>
-
-                <!-- Company Name on right -->
-                <div class="nav-right">
-                    <div class="bounding">
-                        <a href="#" class="bounding-elem company-title">Navgyan Innovations</a>
                     </div>
                     <!-- Hamburger for mobile -->
                     <div class="nav-hamburger" id="navHamburger">
@@ -273,32 +267,77 @@
             </div>
         </div>
 
-        <section class="team-section" id="team-section">
-            <h2>Our Visionaries</h2>
-            <p>We lead by example and inspire through action.</p>
+        <section id="team" class="team-section" aria-labelledby="teamHeading">
+            <div class="team-inner">
+                <h2 id="teamHeading" class="team-title">Meet the Team</h2>
 
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="./img/2.jpg" alt="Tom Simpson">
-                    <h3>Mrs. Padmini Mishra</h3>
-                    <h4>Director</h4>
-                    <p>Ph.D. in Advance Optical Modulation Techniques, is an accomplished academic and researcher with
-                        5+ patents and 10+ publications. With over 16 years of experience in teaching and research, she
-                        has successfully mentored a government-funded team under DBT-BIRAC as well as several
-                        undergraduate student groups. Her expertise and dedication to innovation make her a driving
-                        force in advancing research and nurturing young talent within the organization.</p>
-                </div>
+                <div class="team-grid" role="list">
+                    <!-- Member -->
+                     <article class="member-card" role="listitem" data-name="Padmini Mishra"
+                        aria-label="Padmini Mishra, Co-Founder & CTO" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/2.jpg" alt="Padmini Mishra" loading="lazy">
+                            <div class="roles">
+                                <span>#Director</span><span>#Researcher</span>
+                            </div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
 
-                <div class="team-member">
-                    <img src="./img/1.png" alt="John Doe">
-                    <h3>Dr. Tusharkant Panda</h3>
-                    <h4>Managing Director</h4>
-                    <p>Ph.D. in Optical Communication, is a distinguished researcher with several patents and
-                        publications in reputed journals. With over 17 years of experience in research and teaching, he
-                        currently leads two Department of Biotechnology–funded projects. His expertise spans Optical
-                        Fiber Communication, AI, Deep Learning, NLP and Nano Devices. Dr. Panda has guided 10+
-                        postgraduate and 100+ undergraduate scholars, driving innovation through visionary leadership
-                        and cutting-edge research.</p>
+                    <article class="member-card" role="listitem" data-name="Dr. Tusharkant Panda"
+                        aria-label="Dr. Tusharkant Panda, CEO & Founder" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/1.png" alt="Dr. Tusharkant Panda" loading="lazy">
+                            <div class="roles">
+                                <span>#Managing_Director</span>
+                            </div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
+
+                    <article class="member-card" role="listitem" data-name="Bhawani Sahu"
+                        aria-label="Bhawani Sahu, AI & ML Engineer" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/3.jpg" alt="Bhawani Sahu" loading="lazy">
+                            <div class="roles">
+                                <span>#AI & ML</span>
+                            </div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
+
+                    <!-- add other members similarly -->
+                    <article class="member-card" role="listitem" data-name="Ramkrushna Sahu" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/4.jpg" alt="Ramkrushna Sahu" loading="lazy">
+                            <div class="roles"><span>#AI & ML</span></div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
+
+                    <article class="member-card" role="listitem" data-name="Kumar Prasannajit Sahu" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/5.jpg" alt="Kumar Prasannajit Sahu" loading="lazy">
+                            <div class="roles"><span>#Fullstack_Developer</span></div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
+
+                    <article class="member-card" role="listitem" data-name="Anurag Das" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/6.jpg" alt="Anurag Das" loading="lazy">
+                            <div class="roles"><span>#Research</span><span>#Analyst</span></div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
+
+                    <article class="member-card" role="listitem" data-name="Priyanshu Patro" tabindex="0">
+                        <div class="member-media">
+                            <img src="./img/7.jpg" alt="Priyanshu Patro" loading="lazy">
+                            <div class="roles"><span>#DataScience</span><span>#Researcher</span></div>
+                            <div class="name-bubble" aria-hidden="true"></div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
