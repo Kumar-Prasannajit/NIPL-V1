@@ -297,6 +297,11 @@ body {
     gap: 2vw;
 }
 
+.time{
+    font-size: 1.2rem;
+    color: #FCA311;
+}
+
 .bounding {
     overflow: hidden;
     display: inline-block;
@@ -661,7 +666,6 @@ body {
     padding-right: clamp(5vw, 8vw, 12vw);
     width: 100%;
     height: fit-content;
-    padding-bottom: clamp(6vw, 10vw, 12vw);
     background: linear-gradient(180deg, #001832 0%, #00246b 100%);
     position: relative;
 }
@@ -949,7 +953,6 @@ body {
         align-items: flex-start;
         justify-content: center;
         padding-left: 5%;
-        gap: 1rem;
 
     }
 
@@ -1027,7 +1030,10 @@ body {
         border-radius: 16px;
     }
 
-
+    #landingfooter .bounding h1 .time,
+    #landingfooter .bounding h1 #time {
+        display: none;
+    }
 
 
 
@@ -1098,16 +1104,8 @@ body {
 }
 
 .team-inner {
-    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-}
-
-.team-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--light-bg);
-    margin-bottom: 8px;
 }
 
 .team-sub {
@@ -1125,16 +1123,10 @@ body {
     color: #fff;
 }
 
-.team-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .team-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(1.6rem, 3.5vw, 2.6rem);
-    color: #fff;
+    color: #FCA311;
     margin-bottom: 18px;
 }
 
@@ -1519,23 +1511,6 @@ body {
     display: flex;
     justify-content: space-between;
     /* align-items: flex-end; */
-}
-
-.rights {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.privacy {
-    color: #CADCFC;
-    text-decoration: none;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.privacy:hover {
-    opacity: 1;
 }
 
 /* --- Project Overlay --- */
@@ -2040,5 +2015,42 @@ body {
     .rights,
     .privacy {
         font-size: 0.85rem;
+    }
+}
+
+/* Team slider styles */
+.team-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.team-track {
+    display: flex;
+    gap: 20px;
+    /* remove grid styles */
+    width: max-content;
+}
+
+/* Keep existing member-card styles but ensure they don't grow/shrink */
+.member-card {
+    flex: 0 0 auto;
+    width: 280px; /* fixed width instead of grid-based */
+}
+
+@keyframes slideTeam {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.team-track.animate {
+    animation: slideTeam 30s linear infinite;
+}
+
+/* Adjust animation speed for mobile */
+@media (max-width: 768px) {
+    .team-track.animate {
+        animation-duration: 20s;
     }
 }

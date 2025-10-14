@@ -299,19 +299,210 @@ const emailForm = document.getElementById('email-form');
 
 
 
-// ---------- Initialize All ----------
+// ---------- TEAM SCROLL ----------
+function initTeamScroll() {
+  const track = document.querySelector('.team-track');
+  if (!track) return;
+
+  // Clone items for seamless loop
+  const items = Array.from(track.children);
+  items.forEach(item => track.appendChild(item.cloneNode(true)));
+
+  // Start animation
+  track.classList.add('animate');
+
+  // Pause on hover/focus
+  track.addEventListener('mouseenter', () => {
+      track.style.animationPlayState = 'paused';
+  });
+  
+  track.addEventListener('mouseleave', () => {
+      track.style.animationPlayState = 'running';
+  });
+
+  // Accessibility: pause on focus
+  track.querySelectorAll('.member-card').forEach(card => {
+      card.addEventListener('focus', () => {
+          track.style.animationPlayState = 'paused';
+      });
+      card.addEventListener('blur', () => {
+          track.style.animationPlayState = 'running';
+      });
+  });
+}
+
+// ---------- TEAM MEMBER CARDS ----------
+function initTeamCards() {
+    const cards = document.querySelectorAll('.member-card');
+    cards.forEach(card => {
+        const bubble = card.querySelector('.name-bubble');
+        const name = card.dataset.name || '';
+        bubble.textContent = name;
+
+        function move(e) {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX ?? (rect.left + rect.width / 2)) - rect.left;
+            const y = (e.clientY ?? (rect.top + rect.height / 2)) - rect.top;
+            card.style.setProperty('--mx', x + 'px');
+            card.style.setProperty('--my', y + 'px');
+        }
+
+        card.addEventListener('mousemove', e => {
+            move(e);
+            card.classList.add('is-hover');
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.classList.remove('is-hover');
+        });
+
+        card.addEventListener('focus', () => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (rect.width / 2) + 'px');
+            card.style.setProperty('--my', (rect.height / 2) + 'px');
+            card.classList.add('is-hover');
+        });
+        card.addEventListener('blur', () => card.classList.remove('is-hover'));
+    });
+}
+
+// ---------- PROJECT MODAL ----------
+// Project data object
+const projects = {
+    'Breath X': {
+        title: "Breath X",
+        supportedBy: "BIRAC, Dept. of Biotechnology, Navgyan Innovations",
+        domain: "Healthcare IoT",
+        year: 2024,
+        technologies: ["Python", "Flask", "Sensors", "IoT"],
+        description: "Advanced respiratory monitoring solution using AI-powered analytics for early detection of respiratory conditions and comprehensive health tracking.",
+    },
+    'Brain Viz': {
+        title: "Brain Viz",
+        supportedBy: "Navgyan Innovations, BIRAC",
+        domain: "AI & Data Visualization",
+        year: 2024,
+        technologies: ["Python", "TensorFlow", "D3.js", "Computer Vision"],
+        description: "Revolutionary brain imaging visualization platform for enhanced diagnostic capabilities and treatment planning using advanced AI algorithms.",
+    },
+    'NEUROLANG': {
+        title: "NEUROLANG",
+        supportedBy: "Navgyan Innovations",
+        domain: "Natural Language Processing",
+        year: 2024,
+        technologies: ["Python", "Keras", "NLP Libraries", "Deep Learning"],
+        description: "Natural language processing system designed for neurological assessment and communication assistance for patients with speech disorders.",
+    },
+    'AQUATRON': {
+        title: "AQUATRON",
+        supportedBy: "Navgyan Innovations",
+        domain: "Environmental Monitoring",
+        year: 2025,
+        technologies: ["IoT", "Cloud", "JavaScript", "Data Analytics"],
+        description: "Smart aquaculture monitoring system for sustainable fish farming and water quality management using IoT sensors and real-time analytics.",
+    },
+    'UNICOLLAB': {
+        title: "UNICOLLAB",
+        supportedBy: "Navgyan Innovations",
+        domain: "Web Development",
+        year: 2025,
+        technologies: ["HTML", "CSS", "JavaScript", "Cloud Computing"],
+        description: "Collaborative platform for university-industry partnerships and research project management with integrated communication tools.",
+    },
+    'MANIMA': {
+        title: "MANIMA",
+        supportedBy: "Navgyan Innovations",
+        domain: "Mobile Application",
+        year: 2025,
+        technologies: ["React Native", "Firebase", "Node.js", "Machine Learning"],
+        description: "A digital platform for performing Pinddaan rituals online, offering seamless booking of priests, customizable ritual packages, and guided spiritual services. Designed to simplify traditional ceremonies with modern convenience and cultural sensitivity.",
+    }
+};
+
+function showProjectModal(title, category, year) {
+    const projectOverlay = document.getElementById('project-overlay');
+    const overlayContent = projectOverlay.querySelector('.project-overlay-content');
+    
+    const project = projects[title];
+    if (!project) {
+        console.warn('Project not found:', title);
+        return;
+    }
+
+    overlayContent.innerHTML = `
+        <button class="project-overlay-close" aria-label="Close overlay">&times;</button>
+        <div id="project-overlay-top">
+            <h1>${project.title}</h1>
+            <video autoplay muted loop src="./assets/vid1.mp4"></video>
+        </div>
+        <div id="project-overlay-middle">
+            <div class="project-middle-left">
+                <h1>Supported By : <span>${project.supportedBy}</span></h1>
+            </div>
+            <div class="project-middle-right">
+                <h1>Domain : <span>${project.domain}</span></h1>
+                <h1>Year : <span>${project.year}</span></h1>
+                <h1>Technologies : <span>${project.technologies.join(', ')}</span></h1>
+            </div>
+        </div>
+        <div id="project-overlay-bottom">
+            <div class="projectDesc">
+                <h2>Description</h2>
+                <p>${project.description}</p>
+            </div>
+        </div>
+    `;
+
+    projectOverlay.classList.remove('hidden');
+
+    const closeBtn = overlayContent.querySelector('.project-overlay-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            projectOverlay.classList.add('hidden');
+        });
+    }
+
+    projectOverlay.addEventListener('click', (e) => {
+        if (e.target === projectOverlay) {
+            projectOverlay.classList.add('hidden');
+        }
+    });
+}
+
+// ---------- TIME DISPLAY ----------
+function initTimeDisplay() {
+    const timeSpan = document.getElementById('time');
+    if (!timeSpan) return;
+
+    function updateTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const month = now.toLocaleString('en-US', { month: 'short' });
+        
+        timeSpan.textContent = ` ${hours}:${minutes} ${month}`;
+    }
+
+    // Update immediately and then every minute
+    updateTime();
+    setInterval(updateTime, 60000);
+}
+
+// Update your DOMContentLoaded event listener to include the new initializations
 document.addEventListener("DOMContentLoaded", () => {
-  initNavbar();
-  initHamburgerMenu();
-  initDeepTechHeading();
-  initMouseFollower();
-  initGSAPAnimations();
-  initSmoothScroll();
-  initInfiniteLoop();
-  initSwiper();
-  initScrollAnimations();
-  initSboxHover();
-  initModals();
-  initProjects();
-  initEmailForm();
+    initNavbar();
+    initHamburgerMenu();
+    initDeepTechHeading();
+    initMouseFollower();
+    initGSAPAnimations();
+    initSmoothScroll();
+    initInfiniteLoop();
+    initSwiper();
+    initScrollAnimations();
+    initSboxHover();
+    initModals();
+    initProjects();
+    initTeamScroll();
+    initTeamCards(); // Add this new initialization
+    initTimeDisplay();
 });

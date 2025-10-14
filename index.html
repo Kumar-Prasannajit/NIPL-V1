@@ -68,7 +68,7 @@
                 </div>
                 <div id="eventsMenu">
                     <div class="insta-card">
-                        <a href="https://www.instagram.com/p/DPYGD7IEZtL/" target="_blank">
+                        <a href="https://www.instagram.com/p/DPYGD7IEZtL/"
                             <img src="./assets/in1.png" alt="Instagram Post">
                         </a>
                     </div>
@@ -96,6 +96,9 @@
             </div>
             <div id="landingfooter">
                 <div class="footercontent">
+                    <div class="bounding">
+                        <h1 class="bounding-elem"><span class="time">●</span><span id="time" class="time"></span></h1>
+                    </div>
                     <div class="bounding">
                         <a href="#ourWorks" class="bounding-elem">See Our Products <i
                                 class="ri-arrow-right-up-line"></i></a>
@@ -270,74 +273,77 @@
         <section id="team" class="team-section" aria-labelledby="teamHeading">
             <div class="team-inner">
                 <h2 id="teamHeading" class="team-title">Meet the Team</h2>
-
-                <div class="team-grid" role="list">
-                    <!-- Member -->
-                     <article class="member-card" role="listitem" data-name="Padmini Mishra"
-                        aria-label="Padmini Mishra, Co-Founder & CTO" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/2.jpg" alt="Padmini Mishra" loading="lazy">
-                            <div class="roles">
-                                <span>#Director</span><span>#Researcher</span>
+                
+                <!-- Replace static grid with horizontal scroll track -->
+                <div class="team-slider">
+                    <div class="team-track">
+                        <!-- Your existing member cards remain unchanged -->
+                        <article class="member-card" role="listitem" data-name="Padmini Mishra"
+                            aria-label="Padmini Mishra, Co-Founder & CTO" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/2.jpg" alt="Padmini Mishra" loading="lazy">
+                                <div class="roles">
+                                    <span>#Director</span><span>#Researcher</span>
+                                </div>
+                                <div class="name-bubble" aria-hidden="true"></div>
                             </div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="member-card" role="listitem" data-name="Dr. Tusharkant Panda"
-                        aria-label="Dr. Tusharkant Panda, CEO & Founder" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/1.png" alt="Dr. Tusharkant Panda" loading="lazy">
-                            <div class="roles">
-                                <span>#Managing_Director</span>
+                        <article class="member-card" role="listitem" data-name="Dr. Tusharkant Panda"
+                            aria-label="Dr. Tusharkant Panda, CEO & Founder" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/1.png" alt="Dr. Tusharkant Panda" loading="lazy">
+                                <div class="roles">
+                                    <span>#Managing_Director</span>
+                                </div>
+                                <div class="name-bubble" aria-hidden="true"></div>
                             </div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <article class="member-card" role="listitem" data-name="Bhawani Sahu"
-                        aria-label="Bhawani Sahu, AI & ML Engineer" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/3.jpg" alt="Bhawani Sahu" loading="lazy">
-                            <div class="roles">
-                                <span>#AI & ML</span>
+                        <article class="member-card" role="listitem" data-name="Bhawani Sahu"
+                            aria-label="Bhawani Sahu, AI & ML Engineer" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/3.jpg" alt="Bhawani Sahu" loading="lazy">
+                                <div class="roles">
+                                    <span>#AI & ML</span>
+                                </div>
+                                <div class="name-bubble" aria-hidden="true"></div>
                             </div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        </article>
 
-                    <!-- add other members similarly -->
-                    <article class="member-card" role="listitem" data-name="Ramkrushna Sahu" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/4.jpg" alt="Ramkrushna Sahu" loading="lazy">
-                            <div class="roles"><span>#AI & ML</span></div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        <!-- add other members similarly -->
+                        <article class="member-card" role="listitem" data-name="Ramkrushna Sahu" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/ram.jpg" alt="Ramkrushna Sahu" loading="lazy">
+                                <div class="roles"><span>#AI & ML</span></div>
+                                <div class="name-bubble" aria-hidden="true"></div>
+                            </div>
+                        </article>
 
-                    <article class="member-card" role="listitem" data-name="Kumar Prasannajit Sahu" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/5.jpg" alt="Kumar Prasannajit Sahu" loading="lazy">
-                            <div class="roles"><span>#Fullstack_Developer</span></div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        <article class="member-card" role="listitem" data-name="Kumar Prasannajit Sahu" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/5.jpg" alt="Kumar Prasannajit Sahu" loading="lazy">
+                                <div class="roles"><span>#Fullstack_Developer</span></div>
+                                <div class="name-bubble" aria-hidden="true"></div>
+                            </div>
+                        </article>
 
-                    <article class="member-card" role="listitem" data-name="Anurag Das" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/6.jpg" alt="Anurag Das" loading="lazy">
-                            <div class="roles"><span>#Research</span><span>#Analyst</span></div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        <article class="member-card" role="listitem" data-name="Anurag Das" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/6.jpg" alt="Anurag Das" loading="lazy">
+                                <div class="roles"><span>#Research</span><span>#Analyst</span></div>
+                                <div class="name-bubble" aria-hidden="true"></div>
+                            </div>
+                        </article>
 
-                    <article class="member-card" role="listitem" data-name="Priyanshu Patro" tabindex="0">
-                        <div class="member-media">
-                            <img src="./img/7.jpg" alt="Priyanshu Patro" loading="lazy">
-                            <div class="roles"><span>#DataScience</span><span>#Researcher</span></div>
-                            <div class="name-bubble" aria-hidden="true"></div>
-                        </div>
-                    </article>
+                        <article class="member-card" role="listitem" data-name="Priyanshu Patro" tabindex="0">
+                            <div class="member-media">
+                                <img src="./img/7.jpg" alt="Priyanshu Patro" loading="lazy">
+                                <div class="roles"><span>#DataScience</span><span>#Researcher</span></div>
+                                <div class="name-bubble" aria-hidden="true"></div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
@@ -420,9 +426,6 @@
             <a href="#footer">Contact</a>
         </div>
 
-
-
-
         <!-- GSAP CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
             integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
@@ -435,153 +438,7 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
         <script src="script.js"></script>
-        <script>
-            /* filepath: d:\jit\NIPL_V1\NIPL-Website-main\index.html (inline script added) */
-            /* Minimal JS to drive the cursor-follow name bubble per card and keyboard focus support */
-            (function () {
-                const cards = document.querySelectorAll('.member-card');
-                cards.forEach(card => {
-                    const bubble = card.querySelector('.name-bubble');
-                    const name = card.dataset.name || '';
-                    bubble.textContent = name;
-
-                    function move(e) {
-                        const rect = card.getBoundingClientRect();
-                        const x = (e.clientX ?? (rect.left + rect.width / 2)) - rect.left;
-                        const y = (e.clientY ?? (rect.top + rect.height / 2)) - rect.top;
-                        card.style.setProperty('--mx', x + 'px');
-                        card.style.setProperty('--my', y + 'px');
-                    }
-
-                    card.addEventListener('mousemove', e => {
-                        move(e);
-                        card.classList.add('is-hover');
-                    });
-
-                    card.addEventListener('mouseleave', () => {
-                        card.classList.remove('is-hover');
-                    });
-
-                    // keyboard accessibility: show bubble on focus & use center position
-                    card.addEventListener('focus', () => {
-                        const rect = card.getBoundingClientRect();
-                        card.style.setProperty('--mx', (rect.width / 2) + 'px');
-                        card.style.setProperty('--my', (rect.height / 2) + 'px');
-                        card.classList.add('is-hover');
-                    });
-                    card.addEventListener('blur', () => card.classList.remove('is-hover'));
-                });
-            })();
-
-            // Project Modal Function for Grid Cards
-            function showProjectModal(title, category, year) {
-                const projectOverlay = document.getElementById('project-overlay');
-                const overlayContent = projectOverlay.querySelector('.project-overlay-content');
-
-                // Project data
-                const projects = {
-                    'Breath X': {
-                        title: "Breath X",
-                        supportedBy: "BIRAC, Dept. of Biotechnology, Navgyan Innovations",
-                        domain: "Healthcare IoT",
-                        year: 2024,
-                        technologies: ["Python", "Flask", "Sensors", "IoT"],
-                        description: "Advanced respiratory monitoring solution using AI-powered analytics for early detection of respiratory conditions and comprehensive health tracking.",
-                    },
-                    'Brain Viz': {
-                        title: "Brain Viz",
-                        supportedBy: "Navgyan Innovations, BIRAC",
-                        domain: "AI & Data Visualization",
-                        year: 2024,
-                        technologies: ["Python", "TensorFlow", "D3.js", "Computer Vision"],
-                        description: "Revolutionary brain imaging visualization platform for enhanced diagnostic capabilities and treatment planning using advanced AI algorithms.",
-                    },
-                    'NEUROLANG': {
-                        title: "NEUROLANG",
-                        supportedBy: "Navgyan Innovations",
-                        domain: "Natural Language Processing",
-                        year: 2024,
-                        technologies: ["Python", "Keras", "NLP Libraries", "Deep Learning"],
-                        description: "Natural language processing system designed for neurological assessment and communication assistance for patients with speech disorders.",
-                    },
-                    'AQUATRON': {
-                        title: "AQUATRON",
-                        supportedBy: "Navgyan Innovations",
-                        domain: "Environmental Monitoring",
-                        year: 2025,
-                        technologies: ["IoT", "Cloud", "JavaScript", "Data Analytics"],
-                        description: "Smart aquaculture monitoring system for sustainable fish farming and water quality management using IoT sensors and real-time analytics.",
-                    },
-                    'UNICOLLAB': {
-                        title: "UNICOLLAB",
-                        supportedBy: "Navgyan Innovations",
-                        domain: "Web Development",
-                        year: 2025,
-                        technologies: ["HTML", "CSS", "JavaScript", "Cloud Computing"],
-                        description: "Collaborative platform for university-industry partnerships and research project management with integrated communication tools.",
-                    },
-                    'MANIMA': {
-                        title: "MANIMA",
-                        supportedBy: "Navgyan Innovations",
-                        domain: "Mobile Application",
-                        year: 2025,
-                        technologies: ["React Native", "Firebase", "Node.js", "Machine Learning"],
-                        description: "A digital platform for performing Pinddaan rituals online, offering seamless booking of priests, customizable ritual packages, and guided spiritual services. Designed to simplify traditional ceremonies with modern convenience and cultural sensitivity.",
-                    }
-                };
-
-                // Find the project data based on title
-                const project = projects[title];
-
-                if (!project) {
-                    console.warn('Project not found:', title);
-                    return;
-                }
-
-                // Update the modal content
-                overlayContent.innerHTML = `
-                    <button class="project-overlay-close" aria-label="Close overlay">&times;</button>
-                    <div id="project-overlay-top">
-                        <h1>${project.title}</h1>
-                        <video autoplay muted loop src="./assets/vid1.mp4"></video>
-                    </div>
-                    <div id="project-overlay-middle">
-                        <div class="project-middle-left">
-                            <h1>Supported By : <span>${project.supportedBy}</span></h1>
-                        </div>
-                        <div class="project-middle-right">
-                            <h1>Domain : <span>${project.domain}</span></h1>
-                            <h1>Year : <span>${project.year}</span></h1>
-                            <h1>Technologies : <span>${project.technologies.join(', ')}</span></h1>
-                        </div>
-                    </div>
-                    <div id="project-overlay-bottom">
-                        <div class="projectDesc">
-                            <h2>Description</h2>
-                            <p>${project.description}</p>
-                        </div>
-                    </div>
-                `;
-
-                // Show the modal
-                projectOverlay.classList.remove('hidden');
-
-                // Re-attach close event to new button
-                const closeBtn = overlayContent.querySelector('.project-overlay-close');
-                if (closeBtn) {
-                    closeBtn.addEventListener('click', () => {
-                        projectOverlay.classList.add('hidden');
-                    });
-                }
-
-                // Close modal when clicking outside
-                projectOverlay.addEventListener('click', (e) => {
-                    if (e.target === projectOverlay) {
-                        projectOverlay.classList.add('hidden');
-                    }
-                });
-            }
-        </script>
+    </div>
 </body>
 
 </html>
