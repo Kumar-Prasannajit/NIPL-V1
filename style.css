@@ -33,6 +33,12 @@ body {
     overflow-y: scroll;
 }
 
+::selection {
+  background: #FCA311;
+  color: #00246B; /* Optional: changes the text color within the selection */
+}
+
+
 #mobileMenu {
     display: none;
 }
